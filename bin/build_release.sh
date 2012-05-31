@@ -6,7 +6,7 @@ RELEASE=`head -1 project.clj | awk '{print $3}' | sed -e 's/\"//' | sed -e 's/\"
 
 echo Making release $RELEASE
 
-DIR=/tmp/storm-$RELEASE
+DIR=/tmp/storm
 
 rm -rf $DIR
 export LEIN_ROOT=1
