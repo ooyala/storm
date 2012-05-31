@@ -1,12 +1,14 @@
 #!/bin/bash
+#
+# Modified by (ev) for Ooyala deploy process
 
 RELEASE=`head -1 project.clj | awk '{print $3}' | sed -e 's/\"//' | sed -e 's/\"//'`
 
 echo Making release $RELEASE
 
-DIR=_release/storm-$RELEASE
+DIR=/tmp/storm-$RELEASE
 
-rm -rf _release
+rm -rf $DIR
 export LEIN_ROOT=1
 rm *.zip
 rm *jar
@@ -35,9 +37,9 @@ cp -R bin $DIR/
 cp README.markdown $DIR/
 cp LICENSE.html $DIR/
 
-cd _release
-zip -r storm-$RELEASE.zip *
-cd ..
-mv _release/storm-*.zip .
-rm -rf _release
+# cd _release
+# zip -r storm-$RELEASE.zip *
+# cd ..
+# mv _release/storm-*.zip .
+# rm -rf _release
 
