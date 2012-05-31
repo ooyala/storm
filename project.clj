@@ -1,11 +1,12 @@
-(defproject storm "0.8.0-SNAPSHOT"
+(defproject storm "0.8.0-Ooyala1"
   :source-path "src/clj"
   :test-path "test/clj"
   :java-source-path "src/jvm"
   :javac-options {:debug "true" :fork "true"}
   :resources-path "conf"
   :dev-resources-path "src/dev"
-  :repositories {"sonatype" "http://oss.sonatype.org/content/groups/public/"}
+  :repositories {"snapshots" "http://nexus.ooyala.com/nexus/content/repositories/snapshots"
+                 "releases"  "http://nexus.ooyala.com/nexus/content/repositories/releases"}
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [commons-io "1.4"]
                  [org.apache.commons/commons-exec "1.1"]
