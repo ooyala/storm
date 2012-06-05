@@ -7,8 +7,9 @@ RELEASE=`head -1 project.clj | awk '{print $3}' | sed -e 's/\"//' | sed -e 's/\"
 echo Making release $RELEASE
 
 #DIR=_release/storm-$RELEASE
-# This is done so we can easily overwrite checked in versions of Storm distro
-DIR=_release/storm-0.8.0-ooyala
+# Strip final number from release so we can easily overwrite checked in versions of Storm distro
+RELEASE_NO_NUM=`echo $RELEASE | sed -e 's/[0-9]*$//'`
+DIR=_release/$RELEASE_NO_NUM
 
 rm -rf _release
 export LEIN_ROOT=1
