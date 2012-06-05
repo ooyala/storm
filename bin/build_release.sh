@@ -6,7 +6,9 @@ RELEASE=`head -1 project.clj | awk '{print $3}' | sed -e 's/\"//' | sed -e 's/\"
 
 echo Making release $RELEASE
 
-DIR=_release/storm-$RELEASE
+#DIR=_release/storm-$RELEASE
+# This is done so we can easily overwrite checked in versions of Storm distro
+DIR=_release/storm-0.8.0-ooyala
 
 rm -rf _release
 export LEIN_ROOT=1
